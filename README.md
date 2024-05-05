@@ -1,2 +1,2 @@
-# Temple-go-web-project
-A go web project include redis mysql kafka config gin/hertz middleware jwt docker etc.
+# Temple-Go-Web-Project(TGWP)
+A go web project project include redis mysql kafka config gin/hertz middleware jwt docker etc.
