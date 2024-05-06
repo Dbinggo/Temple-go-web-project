@@ -2,13 +2,13 @@ package main
 
 import (
 	"tgwp/configs"
-	"time"
+	"tgwp/internal/db/mySql"
+	"tgwp/log"
 )
 
 func main() {
+	log.InitLogger()
 	configs.Init()
-	for {
-		print(1)
-		time.Sleep(10 * time.Second)
-	}
+	mySql.InitMySql()
+
 }
