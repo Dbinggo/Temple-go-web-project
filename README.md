@@ -44,8 +44,9 @@ go mod install
 3. 日志系统（使用zap实现 日志分割 日志轮转）
 
 ## 待开发功能
-- [ ] hertz gin fiber 相关基建逻辑（@Dbinggo）
+- [ ] hertz gin fiber 相关基建逻辑（@Dbinggo ）
 - [ ] kafka rocketmq rabbitmq (nobody)
 - [ ] 第三方工具类扩展
 - [ ] 优化目录结构
-- [ ] log扩展优化 使用接口实现 用logrus实现接口（@Dbinggo）
+- [ ] log扩展优化 使用接口实现 用logrus实现接口（@Dbinggo ）
+- [ ] 中间件开发
