@@ -1,12 +1,15 @@
-mysql:
-  host: 123.207.73.185
-  port: 13306
-  username: root
-  password: hehehe1..
-  dbname: mydatabase
+app:
+  port: 8080
+  env: pro
+
+database:
+  driver: mysql
+  migrate: true
+  dsn: fortest:test@tcp(123.207.73.185:3307)/fortest?charset=utf8mb4&parseTime=True&loc=Local&timeout=1000ms
 
 redis:
-  host: localhost
-  port: 6379
-  password: myredispassword
+  enable: true
+  host: 123.207.73.185
+  port: 16379
+  password: DbinggoYjddb
   db: 0

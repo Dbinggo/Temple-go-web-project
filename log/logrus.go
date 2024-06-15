@@ -15,10 +15,8 @@ import (
 	"time"
 )
 
-var MyLogger *MyLoggerStruct
-
 func InitLogger() {
-	hook := NewLfsHook(utils.GetRootPath("log/log_files/api.log"), nil, 10)
+	hook := NewLfsHook(utils.GetRootPath("log/logfiles/api.log"), nil, 10)
 	logrus.AddHook(hook)
 
 	logrus.SetFormatter(formatter(true))
@@ -26,7 +24,7 @@ func InitLogger() {
 	logrus.SetLevel(logrus.DebugLevel)
 
 	logrus.Debugln("[INIT] init log success")
-	MyLogger = &MyLoggerStruct{Logger: logrus.New()}
+
 }
 
 func formatter(isConsole bool) *nested.Formatter {
@@ -43,7 +41,7 @@ func formatter(isConsole bool) *nested.Formatter {
 			fullPath, line := funcInfo.FileLine(frame.PC)
 			fncSlice := strings.Split(funcInfo.Name(), ".")
 			fncName := fncSlice[len(fncSlice)-1]
-			return fmt.Sprintf(" [%v]-[%v]-[%v]", filepath.Base(fullPath), fncName, line)
+			return fmt.Sprintf("[%15v] [%15v] [%3v]", filepath.Base(fullPath), fncName, line)
 		},
 	}
 	if isConsole {
