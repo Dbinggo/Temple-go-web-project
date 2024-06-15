@@ -25,13 +25,13 @@ func GetZap(config *configs.Config) *zap.Logger {
 		//本开发模式旨在将正常信息及以上的log记录在文件中，方便查看
 		fileInfoCore := newZapConfig().
 			setEncoder(false, zapcore.NewConsoleEncoder).
-			setFileWriteSyncer(global.Path + global.LOG_INFO_LOG_PATH).
+			setFileWriteSyncer(global.Path + config.App.LogfilePath + "info.log").
 			setLevelEnabler(zapcore.DebugLevel).
 			getCore()
 		//本开发模式旨在将error及以上的log记录在文件中，方便查看
 		fileErrorCore := newZapConfig().
 			setEncoder(false, zapcore.NewConsoleEncoder).
-			setFileWriteSyncer(global.Path + global.LOG_ERR_LOG_PATH).
+			setFileWriteSyncer(global.Path + config.App.LogfilePath + "error.log").
 			setLevelEnabler(zapcore.ErrorLevel).
 			getCore()
 		cores = append(cores, fileInfoCore, fileErrorCore)
@@ -107,8 +107,8 @@ func (z *zapConfig) setFileWriteSyncer(logFilePath string) *zapConfig {
 	//引入第三方库 Lumberjack 加入日志切割功能
 	lumberWriteSyncer := &lumberjack.Logger{
 		Filename:   logFilePath,
-		MaxSize:    10,    // megabytes
-		MaxBackups: 100,   //最多备份文件数量
+		MaxSize:    1024,  // megabytes
+		MaxBackups: 7,     //最多备份文件数量
 		MaxAge:     28,    // days
 		Compress:   false, //Compress确定是否应该使用gzip压缩已旋转的日志文件。默认值是不执行压缩。
 	}
