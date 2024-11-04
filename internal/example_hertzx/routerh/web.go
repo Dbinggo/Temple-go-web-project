@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"github.com/cloudwego/hertz/pkg/app/server"
 	"tgwp/global"
-	_ "tgwp/internal/hertzx/apih"
-	manager "tgwp/internal/hertzx/managerh"
-	_ "tgwp/internal/hertzx/middlewareh"
+	_ "tgwp/internal/example_hertzx/apih"
+	manager "tgwp/internal/example_hertzx/managerh"
+	_ "tgwp/internal/example_hertzx/middlewareh"
 	"tgwp/log/zlog"
 )
 

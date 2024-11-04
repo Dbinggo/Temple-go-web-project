@@ -2,7 +2,7 @@ package main
 
 import (
 	"tgwp/initalize"
-	router "tgwp/internal/hertzx/routerh"
+	router "tgwp/internal/example_hertzx/routerh"
 	"tgwp/log/zlog"
 )
 
@@ -12,6 +12,6 @@ func main() {
 	// 工程进入前夕，释放资源
 	defer initalize.Eve()
 	router.RunServer()
-	zlog.Infof("程序运行成功！")
+	zlog.Infof("程序运行完成！")
 
 }

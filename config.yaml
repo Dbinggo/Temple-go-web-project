@@ -1,0 +1,18 @@
+app:
+  port: 8080
+  host: 127.0.0.1
+  env: dev
+  logfiles: /logs
+
+database:
+  driver: mysql
+  migrate: true
+  # use dsn
+  dsn: fortest:test@tcp(8.139.23.46:3306)/fortest?charset=utf8mb4&parseTime=True&loc=Local&timeout=1000ms
+
+redis:
+  enable: true
+  host: 123.207.73.185
+  port: 16379
+  password:
+  db: 0

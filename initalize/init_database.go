@@ -5,13 +5,14 @@ import (
 	"tgwp/db/databases"
 	"tgwp/db/myRedis"
 	"tgwp/global"
+	"tgwp/internal/pkg/mysqlx"
 	"tgwp/log/zlog"
 )
 
 func InitDataBase(config configs.Config) {
 	switch config.DB.Driver {
 	case "mysql":
-		databases.InitDataBases(databases.NewMySql(), config)
+		databases.InitDataBases(mysqlx.NewMySql(), config)
 		break
 	}
 	if config.App.Env != "pro" {

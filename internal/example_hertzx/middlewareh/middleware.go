@@ -5,7 +5,7 @@ import (
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/google/uuid"
 	"go.uber.org/zap"
-	"tgwp/internal/hertzx/managerh"
+	"tgwp/internal/example_hertzx/managerh"
 	"tgwp/log/zlog"
 )
 

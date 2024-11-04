@@ -2,10 +2,11 @@ package initalize
 
 import (
 	"tgwp/global"
-	"tgwp/utils"
+	"tgwp/util"
 )
 
 func Init() {
+	introduce()
 	InitLog(global.Config)
 	InitPath()
 	InitConfig()
@@ -14,5 +15,5 @@ func Init() {
 	InitRedis(*global.Config)
 }
 func InitPath() {
-	global.Path = utils.GetRootPath("")
+	global.Path = util.GetRootPath("")
 }

@@ -1,4 +1,4 @@
-package databases
+package mysqlx
 
 import (
 	"gorm.io/driver/mysql"
@@ -24,6 +24,6 @@ func (m *Mysql) initDataBases(config configs.Config) (*gorm.DB, error) {
 func (m *Mysql) getDsn(config configs.Config) string {
 	return config.DB.Dsn
 }
-func NewMySql() DataBase {
+func NewMySql() *Mysql {
 	return &Mysql{}
 }

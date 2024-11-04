@@ -6,7 +6,7 @@ import (
 	"github.com/cloudwego/hertz/pkg/common/utils"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 	"github.com/cloudwego/hertz/pkg/route"
-	manager "tgwp/internal/hertzx/managerh"
+	manager "tgwp/internal/example_hertzx/managerh"
 	"tgwp/log/zlog"
 )
 
